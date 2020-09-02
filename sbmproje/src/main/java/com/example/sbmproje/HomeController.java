@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.example.sbmproje.ResourceNotFoundException;
 
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -28,6 +29,13 @@ public class HomeController {
     @GetMapping("/farms")
     public List < Farm > getAllFarms() {
         return farmRepository.findAll();
+    }
+
+    @GetMapping("/farms/{id}")
+    public ResponseEntity < Farm > getFarmByID(@PathVariable Long id){
+        Farm farm = farmRepository.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("Farm Not Exist"));
+        return  ResponseEntity.ok(farm);
     }
 
     @PostMapping("/farms")

@@ -25,19 +25,19 @@ class ViewFarmComponent extends Component {
                     <h3 className = "text-center"> Farm Details</h3>
                     <div className = "card-body">
                         <div className = "row">
-                            <label> Farm Name: </label>
+                            <label> <b>Farm Name: </b> </label>
                             <div> { this.state.farm.farmName}</div>
                         </div>
                         <div className = "row">
-                            <label> Farm Address: </label>
+                            <label> <b>Farm Address: </b></label>
                             <div> { this.state.farm.farmAddress }</div>
                         </div>
                         <div className = "row">
-                            <label> Farm Owner: </label>
+                            <label> <b>Farm Owner: </b></label>
                             <div> { this.state.farm.farmOwner }</div>
                         </div>
                         <div className = "row">
-                            <label> Farm Product: </label>
+                            <label> <b>Farm Product: </b></label>
                             <div> { this.state.farm.farmProduct }</div>
                         </div>
                     </div>
